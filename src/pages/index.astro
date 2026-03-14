@@ -1,17 +1,213 @@
 ---
+const title = 'One Point Credentialing | AI-Powered Doctor Credentialing in the USA';
+const description =
+  'One Point Credentialing helps physicians and medical groups accelerate credentialing with an AI-powered workflow built for U.S. payer requirements. Coming soon.';
+const canonical = 'https://onepointcredentialing.com/';
+const ogImage = 'https://onepointcredentialing.com/og-image.svg';
 
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'One Point Credentialing',
+  url: 'https://onepointcredentialing.com',
+  description,
+  areaServed: 'US',
+  sameAs: [],
+  makesOffer: {
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: 'AI-powered physician credentialing service',
+      serviceType: 'Medical credentialing',
+      areaServed: 'US',
+      audience: {
+        '@type': 'Audience',
+        audienceType: 'Physicians and medical groups',
+      },
+    },
+  },
+};
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="One Point Credentialing" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Launching Soon</p>
+        <h1 id="hero-title">AI-powered doctor credentialing built for the U.S. healthcare system.</h1>
+        <p class="lead">
+          One Point Credentialing helps physicians and medical groups reduce delays, improve accuracy,
+          and speed up payer enrollment with a modern credentialing workflow.
+        </p>
+
+        <div class="cta-wrap">
+          <a class="cta" href="mailto:hello@onepointcredentialing.com?subject=One%20Point%20Credentialing%20Waitlist">
+            Join the waitlist
+          </a>
+          <p class="cta-note">Prefer to talk now? Contact us at hello@onepointcredentialing.com</p>
+        </div>
+      </section>
+
+      <section class="trust" aria-labelledby="trust-title">
+        <h2 id="trust-title">Built for physician practices and medical groups</h2>
+        <ul>
+          <li>Credentialing support aligned with U.S. payer and provider data requirements</li>
+          <li>AI-assisted workflows designed to reduce administrative burden and rework</li>
+          <li>Clear status visibility so teams can track progress confidently</li>
+        </ul>
+      </section>
+    </main>
+  </body>
 </html>
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #0b0f19;
+    --muted: #4a5565;
+    --blue: #1d4ed8;
+    --blue-soft: #e8efff;
+    --line: #d6deee;
+    --card: #f8fbff;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4.5rem 1.25rem 3rem;
+  }
+
+  .hero {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 2rem;
+    background: linear-gradient(180deg, #ffffff 0%, var(--card) 100%);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    margin: 0 0 1rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blue);
+    background: var(--blue-soft);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.85rem, 4vw, 3rem);
+    line-height: 1.15;
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+
+  .lead {
+    margin: 1rem 0 0;
+    color: var(--muted);
+    max-width: 62ch;
+    font-size: 1.05rem;
+  }
+
+  .cta-wrap {
+    margin-top: 1.5rem;
+  }
+
+  .cta {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--blue);
+    color: #fff;
+    padding: 0.75rem 1.1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: transform 120ms ease, opacity 120ms ease;
+  }
+
+  .cta:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+
+  .cta-note {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .trust {
+    margin-top: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  ul {
+    margin: 0.9rem 0 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+  }
+
+  li + li {
+    margin-top: 0.55rem;
+  }
+
+  @media (max-width: 640px) {
+    main {
+      padding-top: 2.5rem;
+    }
+
+    .hero,
+    .trust {
+      padding: 1.2rem;
+      border-radius: 14px;
+    }
+  }
+</style>
